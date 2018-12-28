@@ -1,0 +1,66 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+# simplefeaturesbr
+
+The goal of simplefeaturesbr is to make [Simple Features](https://en.wikipedia.org/wiki/Simple_Features) tidy data frames of Brazilian states and municipalities easily available in R.
+
+## Installation
+
+You can install simplefeaturesbr with:  
+
+``` r
+remotes::install_github("BrazilianPublicData/simplefeaturesbr")
+```
+
+## Usage
+
+simplefeaturesbr has a main dataset, `br_municipalities`, and some simple convenience functions to select from this dataset. You can access the data with: 
+
+```{r}
+data("br_municipalities")
+``` 
+
+It looks like this: 
+
+```{r}
+head(br_municipalities)
+```
+
+If you are interested in a specific state, use `select_state()`: 
+```{r}
+select_state("SP")
+``` 
+
+If you'd like to get data for a specific municipality, use `select_municipality()`:
+```{r}
+select_municipality("Sao Paulo")
+``` 
+
+There are two other things to help you. If you can't remember which [IBGE](https://www.ibge.gov.br/en/home-eng.html) code (two-letter abbreviations of Brazilian states) you need, use `UF()` (copy of a simple function from [congressbr](https://github.com/BrazilianPublicData/congressbr)):
+
+```{r}
+UF()
+```
+
+## Why?
+Simple features make _much_ smaller dataframes than spatial polygons. You can plot them easily with ggplot2's `geom_sf()`: 
+
+```{r}
+library(dplyr); library(ggplot2)
+
+select_municipality("Rio de Janeiro") %>% ggplot() + geom_sf()
+```
+
+Nice.

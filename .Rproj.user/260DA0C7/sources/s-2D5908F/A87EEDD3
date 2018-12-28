@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1546018149342.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "A87EEDD3",
+    "lastKnownWriteTime" : 1546018576,
+    "last_content_update" : 1546018576971,
+    "path" : "~/simplefeaturesbr/R/select.R",
+    "project_path" : "R/select.R",
+    "properties" : {
+        "cursorPosition" : "33,0",
+        "scrollLine" : "22"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
