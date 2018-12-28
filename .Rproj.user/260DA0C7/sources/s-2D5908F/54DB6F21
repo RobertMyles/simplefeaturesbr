@@ -5,16 +5,16 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "2285292634",
+    "hash" : "207059236",
     "id" : "54DB6F21",
-    "lastKnownWriteTime" : 1546025066,
-    "last_content_update" : 1546025077826,
+    "lastKnownWriteTime" : 1546025679,
+    "last_content_update" : 1546025679802,
     "path" : "~/simplefeaturesbr/README.Rmd",
     "project_path" : "README.Rmd",
     "properties" : {
-        "cursorPosition" : "96,20",
+        "cursorPosition" : "16,256",
         "last_setup_crc32" : "2D5908Febd474af",
-        "scrollLine" : "78"
+        "scrollLine" : "9"
     },
     "read_only" : false,
     "read_only_alternatives" : [

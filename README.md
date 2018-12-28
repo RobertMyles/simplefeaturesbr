@@ -6,6 +6,7 @@
 The goal of simplefeaturesbr is to make [Simple
 Features](https://en.wikipedia.org/wiki/Simple_Features) tidy data
 frames of Brazilian states and municipalities easily available in R.
+Original JSON files from [here](https://github.com/tbrugz/geodata-br).
 
 ## Installation
 
