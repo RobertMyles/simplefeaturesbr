@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "1390731748",
+    "hash" : "0",
     "id" : "7A0D680F",
-    "lastKnownWriteTime" : 1546020555,
-    "last_content_update" : 1546020555717,
+    "lastKnownWriteTime" : 1546020777,
+    "last_content_update" : 1546020777651,
     "path" : "~/simplefeaturesbr/R/select.R",
     "project_path" : "R/select.R",
     "properties" : {
-        "cursorPosition" : "48,1",
-        "scrollLine" : "34"
+        "cursorPosition" : "44,33",
+        "scrollLine" : "35"
     },
     "read_only" : false,
     "read_only_alternatives" : [

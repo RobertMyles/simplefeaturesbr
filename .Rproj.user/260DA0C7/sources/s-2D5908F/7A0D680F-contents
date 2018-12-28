@@ -1,5 +1,6 @@
 #' @importFrom dplyr filter
-#' @importFrom congressbr UF
+#' @importFrom magrittr "%>%"
+#' @importFrom rlang enquo
 #' @title Print Brazilian State Abbreviations to the Console
 #' @export
 UF <- function() {
