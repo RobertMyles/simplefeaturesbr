@@ -29,6 +29,7 @@ remotes::install_github("BrazilianPublicData/simplefeaturesbr")
 simplefeaturesbr has a main dataset, `br_municipalities`, and some simple convenience functions to select from this dataset. You can access the data with: 
 
 ```{r}
+library(simplefeaturesbr)
 data("br_municipalities")
 ``` 
 

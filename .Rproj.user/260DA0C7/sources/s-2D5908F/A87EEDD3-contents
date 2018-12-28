@@ -47,3 +47,13 @@ select_municipality <- function(municipality){
   return(br_mun)
 
 }
+
+
+#' Pipe operator
+#'
+#' @name %>%
+#' @rdname pipe
+#' @keywords internal
+#' @export
+#' @importFrom magrittr %>%
+NULL
