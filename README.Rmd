@@ -39,9 +39,11 @@ It looks like this:
 head(br_municipalities)
 ```
 
+You can use some convenience functions to look at certain states and municipalities. These will load the main dataset too, so you of course just do this yourself quite easily. But...
+
 If you are interested in a specific state, use `select_state()`: 
 ```{r}
-select_state("SP")
+select_state("SP") %>% head()
 ``` 
 
 If you'd like to get data for a specific municipality, use `select_municipality()`:
@@ -56,12 +58,60 @@ UF()
 ```
 
 ## Why?
-Simple features make _much_ smaller dataframes than spatial polygons. You can plot them easily with ggplot2's `geom_sf()`: 
 
-```{r}
-library(dplyr); library(ggplot2)
+Simple features make _much_ smaller dataframes than spatial polygons. You can plot them easily with ggplot2's `geom_sf()`. For example, we can download the Municipal Human Development Index data (using 2010, most recent year) from the [Atlas Brasil](http://www.atlasbrasil.org.br/2013/en/download/) webpage and plot 'er up:
 
-select_municipality("Rio de Janeiro") %>% ggplot() + geom_sf()
+```{r message = FALSE, warning = FALSE}
+library(tidyverse); library(readxl)
+
+hdi <- read_excel("~/Downloads/atlas2013_dadosbrutos_pt.xlsx",
+                  sheet = 2) %>% 
+  select(year = ANO, ibge_code = Codmun7, hdi = ESPVIDA) %>% 
+  filter(year == 2010) %>% 
+  mutate(ibge_code = as.character(ibge_code))
+
+select_state("RJ") -> rj
+
+rio <- left_join(rj, hdi)
+
+ggplot(rio, aes(fill = hdi)) + 
+  geom_sf() + 
+  scale_fill_viridis_c() +
+  theme_minimal() +
+  theme(legend.position = c(0.2, 0.8),
+        axis.text = element_blank()) +
+  guides(fill = guide_legend(title = "Life Expectancy",
+                             reverse = TRUE))
 ```
 
-Nice.
+Nice. Well, the graph, not the fact that living in richer areas in Rio can increase your life expectancy by **four** years.  
+
+I lived in São Paulo for some years, I wonder what that's like?  
+```{r }
+
+select_state("SP") -> sp
+
+sao <- left_join(sp, hdi)
+
+ggplot(sao, aes(fill = hdi)) + 
+  geom_sf(size = 0.1) + 
+  scale_fill_viridis_c() +
+  theme_minimal() +
+  theme(axis.text = element_blank()) +
+  guides(fill = guide_legend(title = "Life Expectancy",
+                             reverse = TRUE))
+```
+
+And all of Brazil:  
+```{r}
+brazil <- left_join(br_municipalities, hdi)
+
+ggplot(brazil, aes(fill = hdi)) + 
+  geom_sf(size = 0.1) + 
+  scale_fill_viridis_c() +
+  theme_minimal() +
+  theme(axis.text = element_blank(), 
+        legend.position = "none")
+``` 
+
+See? Simple Features tidy dataframes are *kewl*.  
