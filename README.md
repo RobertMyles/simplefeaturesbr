@@ -13,7 +13,7 @@ Original JSON files from [here](https://github.com/tbrugz/geodata-br).
 You can install simplefeaturesbr with:
 
 ``` r
-remotes::install_github("BrazilianPublicData/simplefeaturesbr")
+remotes::install_github("RobertMyles/simplefeaturesbr")
 ```
 
 ## Usage
